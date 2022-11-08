@@ -1,5 +1,6 @@
 package fun.xiaorang.datastructure;
 
+import fun.xiaorang.common.utils.Asserts;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,13 +17,27 @@ public class ArrayListTest {
 
     @Test
     public void test() {
-        List<Integer> integerList = new ArrayList<>();
-        integerList.add(1);
-        integerList.add(0, 2);
-        integerList.add(3);
-        integerList.add(integerList.size(), 4);
-        integerList.remove(0);
-        // 1, 3 , 4
-        LOGGER.info(integerList.toString());
+        List<Integer> list = new ArrayList<>();
+        list.add(11);
+        list.add(22);
+        list.add(33);
+        list.add(44);
+
+        list.add(0, 55); // [55, 11, 22, 33, 44]
+        list.add(2, 66); // [55, 11, 66, 22, 33, 44]
+        list.add(list.size(), 77); // [55, 11, 66, 22, 33, 44, 77]
+
+        list.remove(0); // [11, 66, 22, 33, 44, 77]
+        list.remove(2); // [11, 66, 33, 44, 77]
+        list.remove(list.size() - 1); // [11, 66, 33, 44]
+
+        Asserts.test(list.indexOf(44) == 3);
+        Asserts.test(list.indexOf(22) == List.ELEMENT_NOT_FOUND);
+        Asserts.test(list.contains(33));
+        Asserts.test(list.get(0) == 11);
+        Asserts.test(list.get(1) == 66);
+        Asserts.test(list.get(list.size() - 1) == 44);
+
+        LOGGER.info(list.toString());
     }
 }

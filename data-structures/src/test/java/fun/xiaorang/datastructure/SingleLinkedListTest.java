@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author liulei
- * @description <p style = " font-weight:bold ; "><p/>
+ * @description <p style = " font-weight:bold ; ">单向链表测试类<p/>
  * @github <a href="https://github.com/xihuanxiaorang/datastructures-algorithms">datastructures-algorithms</a>
- * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
- * @date 2022/11/8 11:08
+ * @Copyright 博客：<a href="https://xiaorang.fun">小让的糖果屋</a>  - show me the code
+ * @date 2022/11/6 3:53
  */
-public class LinkedListTest {
-    public static final Logger LOGGER = LoggerFactory.getLogger(LinkedListTest.class);
+public class SingleLinkedListTest {
+    public static final Logger LOGGER = LoggerFactory.getLogger(SingleLinkedListTest.class);
 
     @Test
     public void test() {
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new SingleLinkedList<>();
         list.add(11);
         list.add(22);
         list.add(33);

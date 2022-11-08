@@ -10,6 +10,7 @@
     <modules>
         <module>data-structures</module>
         <module>algorithms</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -17,6 +18,7 @@
         <junit.version>5.9.1</junit.version>
         <slf4j.version>2.0.3</slf4j.version>
         <logback.version>1.4.4</logback.version>
+        <project.version>1.0-SNAPSHOT</project.version>
     </properties>
 
     <dependencyManagement>
@@ -42,6 +44,21 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>fun.xiaorang</groupId>
+                <artifactId>data-structures</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>fun.xiaorang</groupId>
+                <artifactId>algorithms</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>fun.xiaorang</groupId>
+                <artifactId>common</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
