@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author liulei
- * @description <p style = " font-weight:bold ; ">动态数组测试类<p/>
+ * @description <p style = " font-weight:bold ; ">单向循环链表测试类<p/>
  * @github <a href="https://github.com/xihuanxiaorang/datastructures-algorithms">datastructures-algorithms</a>
- * @Copyright 博客：<a href="https://xiaorang.fun">小让的糖果屋</a>  - show me the code
- * @date 2022/11/4 10:00
+ * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
+ * @date 2022/11/9 1:29
  */
-public class ArrayListTest {
-    public static final Logger LOGGER = LoggerFactory.getLogger(ArrayListTest.class);
+public class SingleCircleLinkedListTest {
+    public static final Logger LOGGER = LoggerFactory.getLogger(SingleCircleLinkedListTest.class);
 
     @Test
     public void test() {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new SingleCircleLinkedList<>();
         list.add(11);
         list.add(22);
         list.add(33);
