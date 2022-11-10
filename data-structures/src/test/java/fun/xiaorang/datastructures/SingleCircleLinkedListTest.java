@@ -1,4 +1,4 @@
-package fun.xiaorang.datastructure;
+package fun.xiaorang.datastructures;
 
 import fun.xiaorang.common.utils.Asserts;
 import org.junit.jupiter.api.Test;
@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author liulei
- * @description <p style = " font-weight:bold ; ">双向链表测试类<p/>
+ * @description <p style = " font-weight:bold ; ">单向循环链表测试类<p/>
  * @github <a href="https://github.com/xihuanxiaorang/datastructures-algorithms">datastructures-algorithms</a>
  * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
- * @date 2022/11/8 11:08
+ * @date 2022/11/9 1:29
  */
-public class LinkedListTest {
-    public static final Logger LOGGER = LoggerFactory.getLogger(LinkedListTest.class);
+public class SingleCircleLinkedListTest {
+    public static final Logger LOGGER = LoggerFactory.getLogger(SingleCircleLinkedListTest.class);
 
     @Test
     public void test() {
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new SingleCircleLinkedList<>();
         list.add(11);
         list.add(22);
         list.add(33);

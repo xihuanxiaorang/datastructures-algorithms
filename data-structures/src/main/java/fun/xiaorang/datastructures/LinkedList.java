@@ -1,14 +1,15 @@
-package fun.xiaorang.datastructure;
+package fun.xiaorang.datastructures;
 
 /**
  * @author liulei
- * @description <p style = " font-weight:bold ; ">单向链表<p/>
+ * @description <p style = " font-weight:bold ; ">双向链表<p/>
  * @github <a href="https://github.com/xihuanxiaorang/datastructures-algorithms">datastructures-algorithms</a>
- * @Copyright 博客：<a href="https://xiaorang.fun">小让的糖果屋</a>  - show me the code
+ * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
  * @date 2022/11/6 2:10
  */
-public class SingleLinkedList<E> extends AbstractList<E> {
+public class LinkedList<E> extends AbstractList<E> {
     private Node<E> first;
+    private Node<E> last;
 
     @Override
     public void add(E e) {
@@ -18,6 +19,7 @@ public class SingleLinkedList<E> extends AbstractList<E> {
     @Override
     public void clear() {
         first = null;
+        last = null;
         size = 0;
     }
 
@@ -38,11 +40,23 @@ public class SingleLinkedList<E> extends AbstractList<E> {
     @Override
     public void add(int index, E element) {
         rangeCheckForAdd(index);
-        if (index == 0) {
-            first = new Node<>(element, first);
+        if (index == size) {
+            Node<E> newNode = new Node<>(element, last, null);
+            if (last == null) { // 这是链表添加的第一个元素
+                first = newNode;
+            } else {
+                last.next = newNode;
+            }
+            last = newNode;
         } else {
-            Node<E> prev = node(index - 1);
-            prev.next = new Node<>(element, prev.next);
+            Node<E> node = node(index);
+            Node<E> newNode = new Node<>(element, node.prev, node);
+            if (node.prev == null) {
+                first = newNode;
+            } else {
+                node.prev.next = newNode;
+            }
+            node.prev = newNode;
         }
         size++;
     }
@@ -50,13 +64,18 @@ public class SingleLinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
-        Node<E> node = first;
-        if (index == 0) {
-            first = first.next;
+        Node<E> node = node(index);
+        Node<E> prev = node.prev;
+        Node<E> next = node.next;
+        if (prev != null) {
+            prev.next = next;
         } else {
-            Node<E> prev = node(index - 1);
-            node = prev.next;
-            prev.next = node.next;
+            first = next;
+        }
+        if (next != null) {
+            next.prev = prev;
+        } else {
+            last = prev;
         }
         size--;
         return node.item;
@@ -96,32 +115,35 @@ public class SingleLinkedList<E> extends AbstractList<E> {
     }
 
     private Node<E> node(int index) {
-        Node<E> node = first;
-        for (int i = 0; i < index; i++) {
-            node = node.next;
+        Node<E> node;
+        if (index < (size >> 1)) {
+            node = first;
+            for (int i = 0; i < index; i++) {
+                node = node.next;
+            }
+        } else {
+            node = last;
+            for (int i = size - 1; i > index; i--) {
+                node = node.prev;
+            }
         }
         return node;
     }
 
     private static class Node<E> {
         E item;
+        Node<E> prev;
         Node<E> next;
 
-        public Node(E item, Node<E> next) {
+        public Node(E item, Node<E> prev, Node<E> next) {
             this.item = item;
+            this.prev = prev;
             this.next = next;
         }
 
         @Override
         public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append(item).append("_");
-            if (next != null) {
-                sb.append(next.item);
-            } else {
-                sb.append("null");
-            }
-            return sb.toString();
+            return (prev == null ? "null" : prev.item) + "_" + item + "_" + (next == null ? "null" : next.item);
         }
     }
 }

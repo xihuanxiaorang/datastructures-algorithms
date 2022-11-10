@@ -1,4 +1,4 @@
-package fun.xiaorang.datastructure;
+package fun.xiaorang.datastructures;
 
 /**
  * @author liulei

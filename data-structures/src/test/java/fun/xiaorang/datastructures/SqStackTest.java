@@ -1,4 +1,4 @@
-package fun.xiaorang.datastructure;
+package fun.xiaorang.datastructures;
 
 import fun.xiaorang.common.utils.Asserts;
 import org.junit.jupiter.api.Test;
