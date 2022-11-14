@@ -7,7 +7,7 @@ package fun.xiaorang.datastructures;
  * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
  * @date 2022/11/10 5:03
  */
-public class LinkStack<E> implements Stack<E> {
+public class LinkedStack<E> implements Stack<E> {
     private Node<E> head;
 
     @Override

@@ -12,12 +12,12 @@ import org.slf4j.LoggerFactory;
  * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
  * @date 2022/11/10 5:08
  */
-class LinkStackTest {
-    public static final Logger LOGGER = LoggerFactory.getLogger(LinkStackTest.class);
+class LinkedStackTest {
+    public static final Logger LOGGER = LoggerFactory.getLogger(LinkedStackTest.class);
 
     @Test
     public void test() {
-        Stack<Integer> stack = new LinkStack<>();
+        Stack<Integer> stack = new LinkedStack<>();
         stack.push(11);
         stack.push(22);
         stack.push(33);

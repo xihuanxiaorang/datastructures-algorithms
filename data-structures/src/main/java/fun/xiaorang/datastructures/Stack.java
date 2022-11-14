@@ -2,7 +2,7 @@ package fun.xiaorang.datastructures;
 
 /**
  * @author liulei
- * @description <p style = " font-weight:bold ; "><p/>
+ * @description <p style = " font-weight:bold ; ">栈<p/>
  * @github <a href="https://github.com/xihuanxiaorang/datastructures-algorithms">datastructures-algorithms</a>
  * @Copyright 博客：<a href="https://blog.xiaorang.fun">小让的糖果屋</a>  - show me the code
  * @date 2022/11/10 3:14
